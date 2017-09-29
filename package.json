@@ -1,0 +1,21 @@
+{
+  "name": "up",
+  "version": "0.0.1",
+  "description": "upload files and get MD-5 hash",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.0",
+    "md5": "^2.2.1",
+    "multer": "^1.3.0"
+  }
+}

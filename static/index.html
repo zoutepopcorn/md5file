@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>File upload Node.</title>
+  </head>
+  <body>
+    <h1>ja</h1>
+    <script src="dropzone.js"></script>
+    <script src="jquery.js"></script>
+<link rel="stylesheet" href="dropzone.css">
+
+<!-- <br> Change /upload-target to your upload address -->
+<form id="dropzone" name="userPhoto" class="dropzone">
+<input type='text' id='random' name='random' style="display:none">
+</form>
+
+
+<div id="hash"></div>
+<script type="text/javascript">
+console.log("hoi");
+Dropzone.autoDiscover = false;
+let md = new Dropzone("#dropzone", {url: "/upload"} );
+console.log("hi");
+md.on('success', function() {
+  var args = Array.prototype.slice.call(arguments);
+  console.log(args[0].upload.filename);
+  let fileName = args[0].upload.filename;
+  let hash = args[1];
+  $("#hash").append(`<b>Filename: </b> ${fileName}<br>md-5: <b>${hash} </b><br>`)
+  console.log(args);
+});
+
+</script>
+
+  </body>
+</html>
